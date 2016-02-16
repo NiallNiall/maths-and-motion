@@ -293,9 +293,20 @@ function drawSquiggle(_path) {
 function onFrame(event) {
 	drawSquiggle(mainPaths[mainPaths.length-1]);
 
-	// for(var i = 0; i < mainPaths[mainPaths.length-1].segments.length; i++) {
-	// 	mainPaths[mainPaths.length-1].segments[i].point += (new Point(getRandomA(-1, 1),getRandomA(-1, 1))*2);
+	for(var i = 0; i < mainPaths[mainPaths.length-1].segments.length; i++) {
+		mainPaths[mainPaths.length-1].segments[i].point += (new Point(getRandomA(-1, 1),getRandomA(-1, 1))*2);
+	}
+
+	// for(var i = 0; i < mainPaths.length; i++) {
+	// 	mainPaths[i].rotate(25);
 	// }
+
+	if(mainPaths[mainPaths.length-1].segments.length > 20){
+		lineInc =0;
+		makeNewSquiggle();
+	}
+
+
 
 }
 
