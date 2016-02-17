@@ -1,326 +1,213 @@
-// =================================================
-// ANIMATE COLOUR
-// =================================================
-
+// // =================================================
+// // MAKE WHITE BALL BOUNCE
+// // =================================================
 
 // var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59']; 
+
 // var triArray = [];
 // var triArrayAlt = [];
 
 
-// var points = [
-// 	new Point(100,100),
-// 	new Point(400,100)
-// 	];
+// function createTriangle(_trianglearray, _triangleCenter, _radius){
+// 	var c = _triangleCenter;
+// 	var Radius = _radius;
 
-// var path = new Path(points);
-// // path.strokeColor = 'white';
+// 	var points = [
+// 		new Point(c.x + Radius, c.y+Radius),
+// 		new Point(c.x - Radius, c.y+Radius),
+// 		new Point(c.x, c.y-Radius),
+// 		new Point(c.x + Radius, c.y+Radius)
+// 		];
 
-// for (var i = 0; i < points.length; i++) {
-// 	// console.log(points[i]);
-// 	var myCircle = new Path.Circle(points[i], 10);
-// 	myCircle.fillColor = 'white';
-// };
+// 		_trianglearray.push(new Path(points));
+// }
 
+// var triDistance = 50;
 
-// var mainPath = new Path(points);
-// mainPath.strokeColor = 'red';
-// mainPath.strokeWidth = 10.0;
-// mainPath.strokeCap = 'round';
-
-
-// var rndpoint = new Point(view.bounds.width, view.bounds.height) * Point.random();
-// var myCircle = new Path.Circle(rndpoint, 10);
-// myCircle.fillColor = 'white';
-
-// function onFrame(event) {
-
-// 	var destination = rndpoint.round();
-// 	var point2 = mainPath.segments[1].point.round();
-// 	var diff = destination - point2;
-// 	var pointlength = diff.length;
-// 	console.log(pointlength);
-
-// 	if(pointlength < 10) {
-// 		console.log("frog!");
-// 		rndpoint = new Point(view.bounds.width, view.bounds.height) * Point.random();
-// 		myCircle.position = rndpoint;
-// 	} else {
-// 		var direction = destination - point2;
-// 		var d1 = direction.normalize();
-// 		var point3 = point2 + (d1*8);
-
-// 		mainPath.segments[1].point = point3;
+// for(var i = 0; i < view.size.width; i+= triDistance) {
+// 	for(var j = 0; j < view.size.height; j+= triDistance) {
+// 		var triangleCenter = new Point(i,j);
+// 		createTriangle(triArray, triangleCenter, 25);
+// 		var triangleCenter = new Point(i+triDistance/2,j);
+// 		createTriangle(triArrayAlt, triangleCenter, -25);
 // 	}
 // }
 
-// function onMouseMove(event) {
+// console.log(triArray);
 
+// for(var i = 0; i < triArray.length; i++) {
+// 		var triangleColor = Color.random();
+// 		triArray[i].fillColor = triangleColor;
+// }
+// for(var i = 0; i < triArrayAlt.length; i++) {
+// 	var triangleColor = Color.random();
+// 	triArrayAlt[i].fillColor = triangleColor;
 // }
 
 
+// var ball = new Path.Circle(view.center, 20);
+// ball.fillColor = 'white';
 
+// var ballSpeed = new Point(10, 10);
+// var ballDirection = new Point(1, 1);
 
-
-
-
-
-
-// =================================================
-// draw lines
-// =================================================
-
-// var points = [
-// 	new Point(100,100),
-// 	new Point(400,100)
-// 	];
-
-// var path = new Path(points);
-// // path.strokeColor = 'white';
-
-// // for (var i = 0; i < points.length; i++) {
-// // 	// console.log(points[i]);
-// // 	var myCircle = new Path.Circle(points[i], 10);
-// // 	myCircle.fillColor = 'white';
-// // };
-
-
-// var mainPath = new Path(points);
-// mainPath.strokeColor = 'red';
-// mainPath.strokeWidth = 10.0;
-// mainPath.strokeCap = 'round';
-// mainPath.strokeJoin = 'round';
-
-// var lineInc = 1;
-
-// var rndpoint = new Point(view.bounds.width, view.bounds.height) * Point.random();
-// var myCircle = new Path.Circle(rndpoint, 10);
-// myCircle.fillColor = 'white';
 
 // function onFrame(event) {
 
-// 	var destination = rndpoint;
-// 	var point2 = mainPath.segments[lineInc].point;
-// 	var diff = destination - point2;
-// 	var pointlength = diff.length;
-// 	// console.log(pointlength);
+// 	for(var i = 0; i < triArrayAlt.length; i++) {
+// 		// var triangleColor = Color.random();
+// 		// triArray[i].fillColor = triangleColor;
+// 		// triArrayAlt[i].rotate(-1);
+// 		// var sinus = Math.sin(event.time * 2 +1);
+// 		triArrayAlt[i].fillColor.hue +=5;
+// 		// triArrayAlt[i].scaling = sinus;
 
-// 	if(pointlength < 10) {
-// 		console.log("frog!");
-// 		mainPath.add(destination);
-// 		lineInc +=1;
-// 		rndpoint = new Point(view.bounds.width, view.bounds.height) * Point.random();
-// 		myCircle.position = rndpoint;
-// 	} else {
-// 		var direction = destination - point2;
-// 		var d1 = direction.normalize();
-// 		var point3 = point2 + (d1*8);
-
-// 		mainPath.segments[lineInc].point = point3;
 // 	}
-// }
 
-// function onMouseMove(event) {
-
-// }
-
-
-
-
-// // =================================================
-// // draw lines
-// // =================================================
-
-// var points = [
-// 	view.center,
-// 	view.center
-// 	];
-
-// var path = new Path(points);
-// // path.strokeColor = 'white';
-
-// // for (var i = 0; i < points.length; i++) {
-// // 	// console.log(points[i]);
-// // 	var myCircle = new Path.Circle(points[i], 10);
-// // 	myCircle.fillColor = 'white';
-// // };
-
-
-// var mainPath = new Path(points);
-// mainPath.strokeColor = 'red';
-// mainPath.strokeWidth = 10.0;
-// mainPath.strokeCap = 'round';
-// mainPath.strokeJoin = 'round';
-
-// var lineInc = 1;
-
-// var rndpoint = view.center + (new Point(getRandomA(-1, 1),getRandomA(-1, 1))* 50);;
-// var myCircle = new Path.Circle(rndpoint, 10);
-// myCircle.fillColor = 'white';
-
-// function getRandomA(min, max) {
-//   return Math.random() * (max - min) + min;
-// }
-
-// function onFrame(event) {
-
-// 	var destination = rndpoint;
-// 	var point2 = mainPath.segments[lineInc].point;
-// 	var diff = destination - point2;
-// 	var pointlength = diff.length;
-// 	// console.log(pointlength);
-
-// 	if(pointlength < 10) {
-// 		console.log("frog!");
-// 		mainPath.add(destination);
-// 		lineInc +=1;
-// 		rndpoint = point2 + (new Point(getRandomA(-1, 1),getRandomA(-1, 1))* 10);
-// 		if(rndpoint.x > view.bounds.width) {
-// 			rndpoint.x = view.bounds.width - 10;
-// 		}
-// 		if(rndpoint.x < 0) {
-// 			rndpoint.x = 10;
-// 		}
-// 		if(rndpoint.y > view.bounds.height) {
-// 			rndpoint.y = view.bounds.height - 10;
-// 		}
-// 		if(rndpoint.y < 0) {
-// 			rndpoint.y = 10;
-// 		}
-// 		myCircle.position = rndpoint;
-// 	} else {
-// 		var direction = destination - point2;
-// 		var d1 = direction.normalize();
-// 		var point3 = point2 + (d1*10);
-
-// 		mainPath.segments[lineInc].point = point3;
+// 	for(var i = 0; i < triArray.length; i++) {
+// 		// var triangleColor = Color.random();
+// 		// triArray[i].fillColor = triangleColor;
+// 		// triArray[i].rotate(1);
+// 		// var sinus = Math.sin(event.time * -2 +1);
+// 		triArray[i].fillColor.hue +=5;
+// 		// triArray[i].scaling = sinus;
 // 	}
-// }
 
-// function onMouseMove(event) {
+// 	if (ball.position.y >= view.bounds.height || ball.position.y <= 0){
+// 		ballDirection.y *= -1;
+// 	}
+
+// 	if (ball.position.x >= view.bounds.width || ball.position.x <= 0){
+// 		ballDirection.x *= -1;
+// 	}
+
+// 	ball.position += ballSpeed * ballDirection;
 
 // }
 
 // =================================================
-// draw lines
+// MAKE WHITE BALL BOUNCE
 // =================================================
 
-var mainPaths = [];
+var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59']; 
 
-// var points = [
-// 	view.center,
-// 	view.center
-// 	];
-
-// var path = new Path(points);
-
-// var mainPath = new Path(points);
-// mainPath.strokeColor = 'red';
-// mainPath.strokeWidth = 10.0;
-// mainPath.strokeCap = 'round';
-// mainPath.strokeJoin = 'round';
-
-var lineInc = 1;
-
-var rndpoint = view.center + (new Point(getRandomA(-1, 1),getRandomA(-1, 1))* 50);;
-// var myCircle = new Path.Circle(rndpoint, 10);
-// myCircle.fillColor = 'white';
-
-makeNewSquiggle();
+var triArray = [];
+var triArrayAlt = [];
 
 
-function makeNewSquiggle(){
-
-	var point1 = new Point(view.bounds.width, view.bounds.height) * Point.random();
-	var point2 = point1 + (new Point(getRandomA(-1, 1),getRandomA(-1, 1))* 50);
-	rndpoint = point2;
+function createTriangle(_trianglearray, _triangleCenter, _radius){
+	var c = _triangleCenter;
+	var Radius = _radius;
 
 	var points = [
-		point1,
-		point2
-	];
+		new Point(c.x + Radius, c.y+Radius),
+		new Point(c.x - Radius, c.y+Radius),
+		new Point(c.x, c.y-Radius),
+		new Point(c.x + Radius, c.y+Radius)
+		];
 
-	var path = new Path(points);
-
-	mainPaths.push( new Path(points));
-	mainPaths[mainPaths.length-1].strokeColor = Color.random();
-	mainPaths[mainPaths.length-1].strokeWidth = 10.0;
-	mainPaths[mainPaths.length-1].strokeCap = 'round';
-	mainPaths[mainPaths.length-1].strokeJoin = 'round';
+		_trianglearray.push(new Path(points));
 }
 
-function getRandomA(min, max) {
-  return Math.random() * (max - min) + min;
-}
+var triDistance = 50;
 
-function drawSquiggle(_path) {
-
-	var destination = rndpoint;
-	var point2 = _path.segments[lineInc].point;
-	var diff = destination - point2;
-	var pointlength = diff.length;
-	// console.log(pointlength);
-
-	if(pointlength < 10) {
-		_path.add(destination);
-		lineInc +=1;
-		rndpoint = point2 + (new Point(getRandomA(-1, 1),getRandomA(-1, 1))* 10);
-		if(rndpoint.x > view.bounds.width) {
-			rndpoint.x = view.bounds.width - 10;
-		}
-		if(rndpoint.x < 0) {
-			rndpoint.x = 10;
-		}
-		if(rndpoint.y > view.bounds.height) {
-			rndpoint.y = view.bounds.height - 10;
-		}
-		if(rndpoint.y < 0) {
-			rndpoint.y = 10;
-		}
-		// myCircle.position = rndpoint;
-	} else {
-		var direction = destination - point2;
-		var d1 = direction.normalize();
-		var point3 = point2 + (d1*10);
-
-		_path.segments[lineInc].point = point3;
+for(var i = 0; i < view.size.width; i+= triDistance) {
+	for(var j = 0; j < view.size.height; j+= triDistance) {
+		var triangleCenter = new Point(i,j);
+		createTriangle(triArray, triangleCenter, 25);
+		var triangleCenter = new Point(i+triDistance/2,j);
+		createTriangle(triArrayAlt, triangleCenter, -25);
 	}
-
 }
 
-// var squiggleCount = 0;
+console.log(triArray);
+
+for(var i = 0; i < triArray.length; i++) {
+		var triangleColor = Color.random();
+			// var triangleColor = colours[Math.floor(Math.random()*colours.length)];
+
+		triArray[i].fillColor = triangleColor;
+}
+for(var i = 0; i < triArrayAlt.length; i++) {
+	var triangleColor = Color.random();
+		// var triangleColor = colours[Math.floor(Math.random()*colours.length)];
+
+	triArrayAlt[i].fillColor = triangleColor;
+}
+
+
+var ball = new Path.Circle(view.center, 20);
+ball.fillColor = 'white';
+
+var ballSpeed = new Point(5, 5);
+var ballDirection = new Point(1, 1);
+
+
+// function getDistance(_point1, point2) {
+// 	var dist = _point2 - _point1;
+
+// 	var length;
+// 	return length;
+// }
+
+Number.prototype.clamp = function(min, max) {
+  return Math.min(Math.max(this, min), max);
+};
+
+// function mapNumbers(num, in_min, in_max, out_min, out_max) {
+//   return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+// }
 
 function onFrame(event) {
-	drawSquiggle(mainPaths[mainPaths.length-1]);
 
-	for(var i = 0; i < mainPaths[mainPaths.length-1].segments.length; i++) {
-		mainPaths[mainPaths.length-1].segments[i].point += (new Point(getRandomA(-1, 1),getRandomA(-1, 1))*2);
+	for(var i = 0; i < triArrayAlt.length; i++) {
+		// var triangleColor = Color.random();
+		// triArray[i].fillColor = triangleColor;
+		// triArrayAlt[i].rotate(-1);
+		// var sinus = Math.sin(event.time * 2 +1);
+		triArrayAlt[i].scaling = 0.1;
+		// triArrayAlt[i].fillColor.hue +=5;
+		var distance = (ball.position - triArrayAlt[i].position).length;
+
+		var clampr = distance / 500;
+		var triSize = clampr.clamp(0, 1);
+
+		// var triSize = mapNumbers(distance, 0, 500, 0, 1.0);
+		// var triSize = distance / 500;
+		// console.log(distance);
+
+		triArrayAlt[i].scaling = triSize;
+
 	}
 
-	// for(var i = 0; i < mainPaths.length; i++) {
-	// 	mainPaths[i].rotate(25);
-	// }
+	for(var i = 0; i < triArray.length; i++) {
+		// var triangleColor = Color.random();
+		// triArray[i].fillColor = triangleColor;
+		// triArray[i].rotate(1);
+		// var sinus = Math.sin(event.time * -2 +1);
+		triArray[i].scaling = 0.1;
+		// triArray[i].fillColor.hue +=5;
+		var distance = (ball.position - triArray[i].position).length;
 
-	if(mainPaths[mainPaths.length-1].segments.length > 20){
-		lineInc =0;
-		makeNewSquiggle();
+		// var triSize = mapNumbers(distance, 0, 500, 0, 1.0);
+		var clampr = distance / 500;
+		var triSize = clampr.clamp(0, 1);
+
+		// var triSize = distance / 500;
+		// console.log(distance);
+
+		triArray[i].scaling = triSize;
+		// triArray[i].scaling = sinus;
 	}
 
-
-
-}
-
-function onMouseMove(event) {
-
-}
-
-function onKeyDown(event) {
-	lineInc =0;
-	makeNewSquiggle();
-	// squiggleCount +=1;
-
-	if(event.key == 'a') {
-		console.log(mainPaths);
+	if (ball.position.y >= view.bounds.height || ball.position.y <= 0){
+		ballDirection.y *= -1;
 	}
+
+	if (ball.position.x >= view.bounds.width || ball.position.x <= 0){
+		ballDirection.x *= -1;
+	}
+
+	ball.position += ballSpeed * ballDirection;
 
 }
