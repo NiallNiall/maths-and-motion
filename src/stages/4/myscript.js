@@ -61,7 +61,7 @@
 // NICER TRIANGLES
 // =================================================
 
-var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59']; 
+// var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59']; 
 // var colours = ['navy', 'blue', 'skyblue', 'darkblue', 'lightblue']; 
 
 function createTriangle(_triangleCenter, _radius){
@@ -75,8 +75,8 @@ function createTriangle(_triangleCenter, _radius){
 		];
 
 	var path = new Path(points);
-	var triangleColor = colours[Math.floor(Math.random()*colours.length)];
-	// var triangleColor = Color.random();
+	// var triangleColor = colours[Math.floor(Math.random()*colours.length)];
+	var triangleColor = Color.random();
 		path.fillColor = triangleColor;
 }
 

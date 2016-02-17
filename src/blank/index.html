@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title></title> <!-- ADD A TITLE! -->
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" href="/css/styles.css">
-  <script type="text/javascript" src="/js/vendor/paper-full.js"></script>
+		<!-- Let's initialise a css file to style the canvas -->
+	  <link rel="stylesheet" href="/css/styles.css">
+		<!-- Let's pull in paperjs vendor file -->
+	  <script type="text/javascript" src="/js/vendor/paper-full.js"></script>
+		<!--
+			Here we're referencing an external javascript file,
+			one that uses paperJS's own syntax of paperscript.
+			Note the canvas argument should match the id of your canvas listed below.
+		-->
+	  <script type="text/paperscript" canvas="mycanvas" src="myscript.js"></script>
 
-  <script type="text/paperscript" canvas="mycanvas" src="myscript.js"></script>
-</head>
+	</head>
 <body>
 
+	<!-- 
+		Here's an html canvas element, the id can be whatever you want.
+		but should be the same as above.
+	-->
 	<canvas id="mycanvas" class="fullwidthbgcanvas" resize></canvas>
 
 </body>

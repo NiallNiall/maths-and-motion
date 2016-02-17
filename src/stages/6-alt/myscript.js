@@ -245,7 +245,7 @@ function createTriangle(_trianglearray, _triangleCenter, _radius){
 
 // var triDistance = 50;
 
-var numTriangles = 20;
+var numTriangles = 4;
 
 for(var i = 0; i < numTriangles; i++) {
 		var triangleCenter = new Point(view.bounds.width, view.bounds.height) * Point.random();
@@ -286,9 +286,9 @@ function onFrame(event) {
 				var p2 = triArray[j].position;
 				var d1 = p1 - p2;
 				var l1 = d1.length;
-				if(l1 < 50 ) {
-					triArray[i].fillColor = 'red';
-					// triDirectionArray[i] *= -1;
+				if(l1 < 10 ) {
+					// triArray[i].fillColor = 'red';
+					triDirectionArray[i] *= -1;
 				}	
 			}
 		}

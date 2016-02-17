@@ -2,41 +2,42 @@
 // MAKING A FILLED TRIANGLE
 // =================================================
 
-var c = view.center;
-var Radius = 50;
+// var c = view.center;
+// var Radius = 50;
 
-var points = [
-	new Point(c.x + Radius, c.y+Radius),
-	new Point(c.x - Radius, c.y+Radius),
-	new Point(c.x, c.y-Radius)
-	];
+// var points = [
+// 	new Point(c.x + Radius, c.y+Radius),
+// 	new Point(c.x - Radius, c.y+Radius),
+// 	new Point(c.x, c.y-Radius)
+// 	];
 
-var path = new Path(points);
-	path.fillColor = 'white';
+// var path = new Path(points);
+// 	path.fillColor = 'white';
 
 // =================================================
 // MAKING A TRIANGLE FUNCTION
 // =================================================
 
-// function createTriangle(_triangleCenter){
-// 	var c = _triangleCenter;
-// 	var Radius = 50;
+function createTriangle(_triangleCenter){
+	var c = _triangleCenter;
+	var Radius = 50;
 
-// 	var points = [
-// 		new Point(c.x + Radius, c.y+Radius),
-// 		new Point(c.x - Radius, c.y+Radius),
-// 		new Point(c.x, c.y-Radius)
-// 		];
+	var points = [
+		new Point(c.x + Radius, c.y+Radius),
+		new Point(c.x - Radius, c.y+Radius),
+		new Point(c.x, c.y-Radius)
+		];
 
-// 	var path = new Path(points);
-// 		path.fillColor = 'white';
-// }
+	var path = new Path(points);
+		// path.fillColor = Color.random();
+		path.fillColor = 'white';
+}
 
-// createTriangle(view.center);
+createTriangle(view.center);
 
-// function onMouseMove(event) {
-// 	createTriangle(event.point);
-// }
+function onMouseMove(event) {
+	createTriangle(event.point);
+}
 
 // =================================================
 // ADDING RANDOM SEEDS
