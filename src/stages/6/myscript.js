@@ -137,7 +137,7 @@ for(var i = 0; i < triArrayAlt.length; i++) {
 
 
 var ball = new Path.Circle(view.center, 20);
-ball.fillColor = 'white';
+// ball.fillColor = 'white';
 
 var ballSpeed = new Point(5, 5);
 var ballDirection = new Point(1, 1);
