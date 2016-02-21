@@ -321,6 +321,7 @@
 var mainPaths = [];
 
 var drawDistance = 30;
+var lineLength = 20;
 
 function getRandomA(min, max) {
   return Math.random() * (max - min) + min;
@@ -440,7 +441,7 @@ function makeNewPoint(pathArray, cirPosition){
 
 
 function makeCircle(_point){
-	var circleRadius = 6;
+	var circleRadius = 4;
 	var myCircle = new Path.Circle(_point, circleRadius);
 	myCircle.fillColor = 'white';
 
@@ -521,7 +522,7 @@ function onFrame(event) {
 
 		getLengthofAll(mainPaths[mainPaths.length-1]);
 
-		if(mainPaths[mainPaths.length-1].segments.length > drawDistance){
+		if(mainPaths[mainPaths.length-1].segments.length > lineLength){
 			makeNewSquiggle(mainPaths);
 		}
 
