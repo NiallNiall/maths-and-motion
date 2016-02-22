@@ -2,103 +2,100 @@
 // // Add Triangles to Array
 // // =================================================
 
-// var triArray = [];
+var triArray = [];
 
-// var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59'];
-// // var colours = ['navy', 'blue', 'skyblue', 'darkblue', 'lightblue']; 
+var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59'];
+// var colours = ['navy', 'blue', 'skyblue', 'darkblue', 'lightblue'];
 
-// function createTriangle(_triangleArray, _triangleCenter, _radius){
-// 	var c = _triangleCenter;
-// 	var Radius = _radius;
+function createTriangle(_triangleArray, _triangleCenter, _radius){
+	var c = _triangleCenter;
+	var Radius = _radius;
 
-// 	var points = [
-// 		new Point(c.x + Radius, c.y+Radius),
-// 		new Point(c.x - Radius, c.y+Radius),
-// 		new Point(c.x, c.y-Radius)
-// 		];
+	var points = [
+		new Point(c.x + Radius, c.y+Radius),
+		new Point(c.x - Radius, c.y+Radius),
+		new Point(c.x, c.y-Radius)
+		];
 
-// 	var path = new Path(points);
+	var path = new Path(points);
 
-// 	var triangleColor = colours[Math.floor(Math.random()*colours.length)];
-// 	// var triangleColor = Color.random();
-// 	path.fillColor = triangleColor;
-// 	_triangleArray.push(path);
-// }
+	var triangleColor = colours[Math.floor(Math.random()*colours.length)];
+	// var triangleColor = Color.random();
+	path.fillColor = triangleColor;
+	_triangleArray.push(path);
+}
 
-// var triDistance = 50;
+var triDistance = 50;
 
-// for(var i = 0; i < view.size.width; i+= triDistance) {
-// 	for(var j = 0; j < view.size.height; j+= triDistance) {
+for(var i = 0; i < view.size.width; i+= triDistance) {
+	for(var j = 0; j < view.size.height; j+= triDistance) {
 
-// 	 	var Radius = triDistance/2;
-// 		var triangleCenter = new Point(i,j);
-// 		createTriangle(triArray, triangleCenter, Radius);
+	 	var Radius = triDistance/2;
+		var triangleCenter = new Point(i,j);
+		createTriangle(triArray, triangleCenter, Radius);
 
-// 		var nextTriangleCenter = new Point(i+Radius,j);
-// 		createTriangle(triArray, nextTriangleCenter, -Radius);
-// 	}
-// }
+		var nextTriangleCenter = new Point(i+Radius,j);
+		createTriangle(triArray, nextTriangleCenter, -Radius);
+	}
+}
 
 // =================================================
 // Address Triangles Individually
 // =================================================
 
-// var triArray = [];
+var triArray = [];
 
-// var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59'];
-// // var colours = ['navy', 'blue', 'skyblue', 'darkblue', 'lightblue']; 
+var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59'];
+// var colours = ['navy', 'blue', 'skyblue', 'darkblue', 'lightblue'];
 
-// function createTriangle(_triangleArray, _triangleCenter, _radius){
-// 	var c = _triangleCenter;
-// 	var Radius = _radius;
+function createTriangle(_triangleArray, _triangleCenter, _radius){
+	var c = _triangleCenter;
+	var Radius = _radius;
 
-// 	var points = [
-// 		new Point(c.x + Radius, c.y+Radius),
-// 		new Point(c.x - Radius, c.y+Radius),
-// 		new Point(c.x, c.y-Radius)
-// 		];
+	var points = [
+		new Point(c.x + Radius, c.y+Radius),
+		new Point(c.x - Radius, c.y+Radius),
+		new Point(c.x, c.y-Radius)
+		];
 
-// 	var path = new Path(points);
+	var path = new Path(points);
 
-// 	var triangleColor = colours[Math.floor(Math.random()*colours.length)];
-// 	// var triangleColor = Color.random();
-// 	path.fillColor = triangleColor;
-// 	_triangleArray.push(path);
-// }
+	var triangleColor = colours[Math.floor(Math.random()*colours.length)];
+	// var triangleColor = Color.random();
+	path.fillColor = triangleColor;
+	_triangleArray.push(path);
+}
 
-// var triDistance = 50;
+var triDistance = 50;
 
-// for(var i = 0; i < view.size.width; i+= triDistance) {
-// 	for(var j = 0; j < view.size.height; j+= triDistance) {
+for(var i = 0; i < view.size.width; i+= triDistance) {
+	for(var j = 0; j < view.size.height; j+= triDistance) {
 
-// 	 	var Radius = triDistance/2;
-// 		var triangleCenter = new Point(i,j);
-// 		createTriangle(triArray, triangleCenter, Radius);
+	 	var Radius = triDistance/2;
+		var triangleCenter = new Point(i,j);
+		createTriangle(triArray, triangleCenter, Radius);
 
-// 		var nextTriangleCenter = new Point(i+Radius,j);
-// 		createTriangle(triArray, nextTriangleCenter, -Radius);
-// 	}
-// }
-
-
-// var count = 0;
-
-// function onFrame(event) {
-
-// 		count++;
-
-// 			    if (count >= 20){
-// 		for(var i = 0; i < triArray.length; i++) {
+		var nextTriangleCenter = new Point(i+Radius,j);
+		createTriangle(triArray, nextTriangleCenter, -Radius);
+	}
+}
 
 
-// 				var triangleColor = Color.random();
-// 				triArray[i].fillColor = triangleColor;
-// 		    }
-// 		count = 0;
+var count = 0;
 
-// 	}
+function onFrame(event) {
 
-// }
+		count++;
+
+		if (count >= 20){
+				count = 0;
+				for(var i = 0; i < triArray.length; i++) {
+					var triangleColor = Color.random();
+					triArray[i].fillColor = triangleColor;
+		    }
+		}
+
+}
 
 
 // =================================================
@@ -106,69 +103,69 @@
 // =================================================
 
 
-var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59']; 
+// var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59'];
 
-var triArray = [];
-var triArrayAlt = [];
+// var triArray = [];
+// var triArrayAlt = [];
 
 
-function createTriangle(_trianglearray, _triangleCenter, _radius){
-	var c = _triangleCenter;
-	var Radius = _radius;
+// function createTriangle(_trianglearray, _triangleCenter, _radius){
+// 	var c = _triangleCenter;
+// 	var Radius = _radius;
 
-	var points = [
-		new Point(c.x + Radius, c.y+Radius),
-		new Point(c.x - Radius, c.y+Radius),
-		new Point(c.x, c.y-Radius),
-		new Point(c.x + Radius, c.y+Radius)
-		];
+// 	var points = [
+// 		new Point(c.x + Radius, c.y+Radius),
+// 		new Point(c.x - Radius, c.y+Radius),
+// 		new Point(c.x, c.y-Radius),
+// 		new Point(c.x + Radius, c.y+Radius)
+// 		];
 
-		_trianglearray.push(new Path(points));
-}
+// 		_trianglearray.push(new Path(points));
+// }
 
-var triDistance = 50;
+// var triDistance = 50;
 
-for(var i = 0; i < view.size.width; i+= triDistance) {
-	for(var j = 0; j < view.size.height; j+= triDistance) {
-		var triangleCenter = new Point(i,j);
-		createTriangle(triArray, triangleCenter, 25);
-		var triangleCenter = new Point(i+triDistance/2,j);
-		createTriangle(triArrayAlt, triangleCenter, -25);
-	}
-}
+// for(var i = 0; i < view.size.width; i+= triDistance) {
+// 	for(var j = 0; j < view.size.height; j+= triDistance) {
+// 		var triangleCenter = new Point(i,j);
+// 		createTriangle(triArray, triangleCenter, 25);
+// 		var triangleCenter = new Point(i+triDistance/2,j);
+// 		createTriangle(triArrayAlt, triangleCenter, -25);
+// 	}
+// }
 
-console.log(triArray);
+// console.log(triArray);
 
-for(var i = 0; i < triArray.length; i++) {
-		var triangleColor = Color.random();
-		triArray[i].fillColor = triangleColor;
-}
-for(var i = 0; i < triArrayAlt.length; i++) {
-	var triangleColor = Color.random();
-	triArrayAlt[i].fillColor = triangleColor;
-}
+// for(var i = 0; i < triArray.length; i++) {
+// 		var triangleColor = Color.random();
+// 		triArray[i].fillColor = triangleColor;
+// }
+// for(var i = 0; i < triArrayAlt.length; i++) {
+// 	var triangleColor = Color.random();
+// 	triArrayAlt[i].fillColor = triangleColor;
+// }
 
-function onFrame(event) {
+// function onFrame(event) {
 
-	for(var i = 0; i < triArrayAlt.length; i++) {
-		// var triangleColor = Color.random();
-		// triArray[i].fillColor = triangleColor;
-		// triArrayAlt[i].rotate(-1);
-		var sinus = Math.sin(event.time * 2 + (i*400));
-		// triArrayAlt[i].fillColor.hue +=5;
-		triArrayAlt[i].scaling = sinus;
+// 	for(var i = 0; i < triArrayAlt.length; i++) {
+// 		// var triangleColor = Color.random();
+// 		// triArray[i].fillColor = triangleColor;
+// 		// triArrayAlt[i].rotate(-1);
+// 		var sinus = Math.sin(event.time * 2 + (i*400));
+// 		// triArrayAlt[i].fillColor.hue +=5;
+// 		triArrayAlt[i].scaling = sinus;
 
-	}
+// 	}
 
-	for(var i = 0; i < triArray.length; i++) {
-		// var triangleColor = Color.random();
-		// triArray[i].fillColor = triangleColor;
-		// triArray[i].rotate(1);
-		var sinus = Math.sin(event.time * 2 + (i*400));
-		// triArray[i].fillColor.hue +=5;
-		triArray[i].scaling = sinus;
-	}
-}
+// 	for(var i = 0; i < triArray.length; i++) {
+// 		// var triangleColor = Color.random();
+// 		// triArray[i].fillColor = triangleColor;
+// 		// triArray[i].rotate(1);
+// 		var sinus = Math.sin(event.time * 2 + (i*400));
+// 		// triArray[i].fillColor.hue +=5;
+// 		triArray[i].scaling = sinus;
+// 	}
+// }
 
 
 // =================================================
@@ -176,7 +173,7 @@ function onFrame(event) {
 // =================================================
 
 
-// var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59']; 
+// var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59'];
 
 // var triArray = [];
 // var triArrayAlt = [];
@@ -253,7 +250,7 @@ function onFrame(event) {
 
 //              // head.position = mousePos;
 //              triArray[i].rotation = angle;
-	
+
 // 	}
 
 // 		for(var i = 0; i < triArrayAlt.length; i++) {
@@ -267,9 +264,9 @@ function onFrame(event) {
 
 //              // head.position = mousePos;
 //              triArrayAlt[i].rotation = angle;
-	
+
 // 	}
-	    	
+
 // }
 
 
@@ -278,7 +275,7 @@ function onFrame(event) {
 // =================================================
 
 
-// var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59']; 
+// var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59'];
 
 // var triArray = [];
 // var triArrayAlt = [];

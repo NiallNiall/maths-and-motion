@@ -51,7 +51,7 @@
 //     // Get cartesian co-ordinates from that radian value
 //     var x = view.center.x + Math.cos(angle) * 300;
 //     var y = view.center.y + Math.sin(angle) * 300;
-	
+
 // 	var triangleCenter = new Point(x,y);
 // 		createTriangle(triangleCenter, 25);
 
@@ -61,8 +61,8 @@
 // NICER TRIANGLES
 // =================================================
 
-// var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59']; 
-// var colours = ['navy', 'blue', 'skyblue', 'darkblue', 'lightblue']; 
+// var colours = ['#363938', '#386567', '#5C4134', '#C4A778', '#CE9B59'];
+// var colours = ['navy', 'blue', 'skyblue', 'darkblue', 'lightblue'];
 
 function createTriangle(_triangleCenter, _radius){
 	var c = _triangleCenter;
